@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/angular-material-app/src",
-  "prefix": "angular-material-app",
+  "prefix": "ama",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
