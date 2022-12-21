@@ -1,4 +1,4 @@
-# Angular 15, NgRx, Tailwind, Formly, and Angular Material Theme App
+# Angular 15, NgRx, Tailwind, Formly, NX and Angular Material Theme App
 
 ## Progress
 1. Onboarding form
