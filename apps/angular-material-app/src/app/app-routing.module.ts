@@ -26,6 +26,19 @@ const routes: Routes = [
             },
         ],
     },
+    {
+        path: '',
+        canActivate: [],
+        canActivateChild: [],
+        // component: FrameComponent,
+        children: [
+            {
+                path: 'onboarding',
+                // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+                loadChildren: () => import('libs/onboarding/src/lib/onboarding.module').then((m) => m.OnboardingModule),
+            },
+        ],
+    },
     {path: '**', redirectTo: '/dashboard'},
 ];
 
