@@ -9,22 +9,17 @@ import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
 })
 export class OnboardingComponent {
     form = new FormGroup({});
-    model: any = {};
+    model = {};
     options: FormlyFormOptions = {};
     fields: FormlyFieldConfig[] = [
         {
-            fieldGroupClassName: 'grid gap-4 grid-cols-4',
+            fieldGroupClassName: 'gap-4 grid grid-cols-12',
             fieldGroup: [
-// https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.formstack.com%2Ftemplates%2Fnew-employee-it-checklist&psig=AOvVaw2llYDhRgngg-Z2YcSM2HqW&ust=1671624242817000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPDAttuTiPwCFQAAAAAdAAAAABAE
                 {
                     key: 'firstName1',
                     type: 'input',
-                    className: 'w-full',
-                    // fieldGroupClassName: 'w-full',
+                    className: 'w-full col-span-6',
                     props: {
-                        // attributes: {
-                        //     class: 'w-full',
-                        // },
                         label: 'First Name',
                         placeholder: 'Placeholder',
                         description: 'Description',
@@ -35,6 +30,7 @@ export class OnboardingComponent {
                 {
                     key: 'lastName',
                     type: 'input',
+                    className: 'col-span-6',
                     props: {
                         label: 'Last Name',
                         placeholder: 'Placeholder',
@@ -46,11 +42,13 @@ export class OnboardingComponent {
                 {
                     key: 'Select',
                     type: 'select',
+                    className: 'col-span-6',
                     props: {
-                        label: 'Select',
+                        label: 'Department',
                         placeholder: 'Placeholder',
-                        description: 'Description',
+                        description: 'Please select department',
                         required: true,
+                        appearance: 'outline',
                         options: [
                             {value: 1, label: 'Option 1'},
                             {value: 2, label: 'Option 2'},
@@ -62,19 +60,69 @@ export class OnboardingComponent {
                 {
                     key: 'select_multi',
                     type: 'select',
+                    className: 'col-span-6',
                     props: {
-                        label: 'Select Multiple',
+                        label: 'Manager',
                         placeholder: 'Placeholder',
                         description: 'Description',
                         required: true,
                         multiple: true,
                         selectAllOption: 'Select All',
+                        appearance: 'outline',
                         options: [
                             {value: 1, label: 'Option 1'},
                             {value: 2, label: 'Option 2'},
                             {value: 3, label: 'Option 3'},
                             {value: 4, label: 'Option 4', disabled: true},
                         ],
+                    },
+                },
+                {
+                    key: 'jobTitle',
+                    type: 'input',
+                    className: 'col-span-12',
+                    props: {
+                        label: 'Job Title',
+                        placeholder: 'Placeholder',
+                        description: 'Description',
+                        appearance: 'outline',
+                        required: true,
+                    },
+                },
+                {
+                    key: 'month',
+                    type: 'input',
+                    className: 'col-span-4',
+                    props: {
+                        label: 'Month',
+                        placeholder: 'Placeholder',
+                        description: 'Description',
+                        appearance: 'outline',
+                        required: true,
+                    },
+                },
+                {
+                    key: 'day',
+                    type: 'input',
+                    className: 'col-span-4',
+                    props: {
+                        label: 'Day',
+                        placeholder: 'Placeholder',
+                        description: 'Description',
+                        appearance: 'outline',
+                        required: true,
+                    },
+                },
+                {
+                    key: 'year',
+                    type: 'input',
+                    className: 'col-span-4',
+                    props: {
+                        label: 'Year',
+                        placeholder: 'Placeholder',
+                        description: 'Description',
+                        appearance: 'outline',
+                        required: true,
                     },
                 },
             ]
