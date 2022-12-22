@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {ExtraOptions, PreloadAllModules, RouterModule, Routes} from '@angular/router';
+import {FrameComponent} from '@angular-material-app/frame';
 
 export const ROUTER_CONFIG: ExtraOptions = {
     scrollPositionRestoration: 'enabled',
@@ -30,7 +31,7 @@ const routes: Routes = [
         path: '',
         canActivate: [],
         canActivateChild: [],
-        // component: FrameComponent,
+        component: FrameComponent,
         children: [
             {
                 path: 'onboarding',

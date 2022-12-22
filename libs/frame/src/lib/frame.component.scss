@@ -1,0 +1,33 @@
+
+// ----- frame layout style BEGIN  -----
+.frame-sidenav-container {
+  height: auto;
+  overflow-x: hidden;
+  display: block;
+  overflow-y: hidden;
+  z-index: 1;
+  contain: style;
+}
+
+.frame-sidenav-content {
+  min-height: 100vh;
+}
+
+.min-height-100vh {
+  min-height: 100vh !important;
+}
+
+.frame-sidenav {
+  position: fixed;
+  left: 0;
+}
+
+// ----- frame layout style END  -----
+
+.pl-260 {
+  padding-left: 260px;
+}
+
+.ml-260 {
+  margin-left: 260px;
+}
