@@ -1,4 +1,10 @@
 <div>
+    <ama-simple-header
+            (toggle)="toggle()"
+            [hasThemeSwitch]="hasThemeSwitch"
+            (darkModeActivate)="darkModeActivate($event)"
+    ></ama-simple-header>
+
     <mat-sidenav
             *ngIf="responsiveService.desktopMd$ | async"
             #sidenav
@@ -9,7 +15,6 @@
     >
     </mat-sidenav>
 
-
     <mat-sidenav
             *ngIf="responsiveService.desktopLg$ | async"
             #sidenav
@@ -19,6 +24,8 @@
             class="frame-sidenav mt-20 bg-background-light dark:bg-background-dark transition-colors"
     >
     </mat-sidenav>
+
+    <ng-container *ngTemplateOutlet="header"></ng-container>
 
     <mat-sidenav-container
             [autosize]="responsiveService.phone$ | async"
@@ -57,3 +64,13 @@
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
+
+<ng-template #header>
+    <ng-container>
+        <ama-simple-header
+                (toggle)="toggle()"
+                [hasThemeSwitch]="hasThemeSwitch"
+                (darkModeActivate)="darkModeActivate($event)"
+        ></ama-simple-header>
+    </ng-container>
+</ng-template>

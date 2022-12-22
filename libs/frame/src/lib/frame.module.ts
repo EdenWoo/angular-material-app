@@ -15,10 +15,12 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {FrameComponent} from './frame.component';
+import {SimpleHeaderComponent} from './simple-header/simple-header.component';
 
 @NgModule({
     declarations: [
-        FrameComponent
+        FrameComponent,
+        SimpleHeaderComponent
     ],
     imports: [
         CommonModule,
