@@ -18,7 +18,7 @@ const routes: Routes = [
         path: '',
         canActivate: [],
         canActivateChild: [],
-        // component: FrameComponent,
+        component: FrameComponent,
         children: [
             {
                 path: 'home',
