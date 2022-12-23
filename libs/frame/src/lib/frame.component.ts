@@ -11,7 +11,6 @@ import {ResponsiveService, ThemingService} from '@angular-material-app/core';
     styleUrls: ['./frame.component.scss'],
 })
 export class FrameComponent implements OnInit {
-    sidenavOpened = false;
     @Input() sidenavContentMaxWidth: any;
     @Input() simpleHeader: boolean | undefined;
     @Input() hasThemeSwitch: boolean | undefined;
@@ -19,12 +18,7 @@ export class FrameComponent implements OnInit {
     mode = 'side';
     @ViewChild('sidenav', {static: false})
     sidenav!: MatSidenav;
-
-    phone$ = this.responsiveService.phone$;
-    tablet$ = this.responsiveService.tablet$;
-    desktop$ = this.responsiveService.desktop$;
-    desktopSm$ = this.responsiveService.desktopSm$;
-    desktopGtSm$ = this.responsiveService.desktopGtSm$;
+    opened = false;
 
     constructor(
         private breakpointObserver: BreakpointObserver,
@@ -43,17 +37,8 @@ export class FrameComponent implements OnInit {
         });
     }
 
-    darkModeActivate(darkMode: boolean) {
-        this.themingService.theme.next(darkMode ? 'dark-theme' : 'light-theme');
-    }
-
-    toggle() {
-        this.sidenav.toggle();
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    sidenavOpenedChange($event: boolean) {
-
+    toggleMenu() {
+        this.opened = !this.opened;
     }
 
     /**

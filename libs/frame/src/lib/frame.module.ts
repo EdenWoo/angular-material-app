@@ -16,11 +16,14 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {FrameComponent} from './frame.component';
 import {SimpleHeaderComponent} from './simple-header/simple-header.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {SideMenuComponent} from './side-menu/side-menu.component';
 
 @NgModule({
     declarations: [
         FrameComponent,
-        SimpleHeaderComponent
+        SimpleHeaderComponent,
+        SideMenuComponent
     ],
     imports: [
         CommonModule,
@@ -38,6 +41,7 @@ import {SimpleHeaderComponent} from './simple-header/simple-header.component';
         MatProgressBarModule,
         MatProgressSpinnerModule,
         MatBottomSheetModule,
+        MatTabsModule,
     ]
 })
 export class FrameModule {

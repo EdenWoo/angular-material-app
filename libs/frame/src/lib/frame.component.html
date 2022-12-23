@@ -1,76 +1,33 @@
-<div>
-    <ama-simple-header
-            (toggle)="toggle()"
-            [hasThemeSwitch]="hasThemeSwitch"
-            (darkModeActivate)="darkModeActivate($event)"
-    ></ama-simple-header>
-
-    <mat-sidenav
-            *ngIf="responsiveService.desktopMd$ | async"
-            #sidenav
-            mode="side"
-            [opened]="sidenavOpened"
-            (openedChange)="sidenavOpenedChange($event)"
-            class="frame-sidenav mt-20 bg-background-light dark:bg-background-dark transition-colors"
-    >
-    </mat-sidenav>
-
-    <mat-sidenav
-            *ngIf="responsiveService.desktopLg$ | async"
-            #sidenav
-            mode="side"
-            [opened]="sidenavOpened"
-            (openedChange)="sidenavOpenedChange($event)"
-            class="frame-sidenav mt-20 bg-background-light dark:bg-background-dark transition-colors"
-    >
-    </mat-sidenav>
-
-    <ng-container *ngTemplateOutlet="header"></ng-container>
-
-    <mat-sidenav-container
-            [autosize]="responsiveService.phone$ | async"
-            class="frame-sidenav-container mat-app-background {{
-      (responsiveService.desktopLg$ | async) || (responsiveService.tablet$ | async) ? ' ml-70' : ''
-    }} {{ (responsiveService.tablet$ | async) ? ' min-height-100vh' : '' }}"
-    >
-        <mat-sidenav
-            #sidenav
-            [opened]="sidenavOpened"
-            (openedChange)="sidenavOpenedChange($event)"
-            class="frame-sidenav bg-background-light dark:bg-background-dark transition-colors"
-            *ngIf="(responsiveService.desktopSm$ | async) || (responsiveService.tablet$ | async) || (responsiveService.phone$ | async)"
-        >
-        </mat-sidenav>
-
-        <mat-sidenav-content role="main" class="frame-sidenav-content flex desktop:pt-16 tablet:pt-16" cdkScrollable>
-            <ng-container
-                    *ngIf="
-          (responsiveService.desktopMd$ | async) ||
-          (responsiveService.desktopSm$ | async) ||
-          (responsiveService.tablet$ | async) ||
-          (responsiveService.phone$ | async)
-        "
-            >
-            </ng-container>
-
-            <div
-                    class="m-auto phone:mt-12 {{ (responsiveService.desktopMd$ | async) && sidenav?.opened ? ' pl-260' : '' }}"
-                    [style.max-width.px]="(responsiveService.desktopLg$ | async) && sidenavContentMaxWidth"
-            >
-                <!-- *ngIf="true" hack is required here for router-outlet to work correctly.
-                                 Otherwise, layout changes won't be registered and the view won't be updated! -->
-                <router-outlet *ngIf="true"></router-outlet>
+<mat-toolbar class="header flex border-b border-gray-light dark:border-gray-dark transition-colors">
+    <button data-testid="header-menu" (click)="toggleMenu()" type="button" aria-label="Toggle sidenav"
+            mat-icon-button>
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <div class="flex-none flex space-x-4">
+        <div class="flex">
+            <div class="flex">
+                <img height="40" width="40" class="w-10 m-auto h-full"
+                     src="https://angular.io/assets/images/logos/angular/angular.svg" alt="logo"/>
             </div>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-</div>
+            <div class="ml-4 flex">
+                <div class="m-auto">
+                    <div class="subheading-2 font-medium">Angular Material App</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<ng-template #header>
-    <ng-container>
-        <ama-simple-header
-                (toggle)="toggle()"
-                [hasThemeSwitch]="hasThemeSwitch"
-                (darkModeActivate)="darkModeActivate($event)"
-        ></ama-simple-header>
-    </ng-container>
-</ng-template>
+</mat-toolbar>
+<mat-sidenav-container class="" style="height: calc(100vh - 64px)">
+
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+        <div class="w-60">
+            <ama-side-menu></ama-side-menu>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <!-- *ngIf="true" hack is required here for router-outlet to work correctly.Otherwise, layout changes won't be registered and the view won't be updated! -->
+        <router-outlet *ngIf="true"></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
