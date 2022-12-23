@@ -2,7 +2,7 @@
 
 ## Progress
 1. Onboarding form
-![image](https://user-images.githubusercontent.com/17792496/208880677-caaaff9e-1a8b-410d-a6c2-bec30d18cd2e.png)
+![image](https://user-images.githubusercontent.com/17792496/209270497-d81aa6eb-3317-4372-892f-bf79c71015bb.png)
 
 ## Development server
 
