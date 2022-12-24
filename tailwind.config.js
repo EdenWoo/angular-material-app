@@ -8,5 +8,13 @@ module.exports = {
         enabled: enablePurge,
         content: ['./apps/**/*.{html,ts}', './libs/**/*.{html,ts}'],
     },
+    theme: {
+      colors: {
+          dark: {
+              'base-background': '#0f0f0f',
+          },
+          ...colors
+      }
+    },
     darkMode: 'class', // or 'media' or 'class'
 }

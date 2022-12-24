@@ -1,19 +1,39 @@
-<mat-toolbar class="header flex border-b border-gray-light dark:border-gray-dark transition-colors">
-    <button data-testid="header-menu" (click)="toggleMenu()" type="button" aria-label="Toggle sidenav"
-            mat-icon-button>
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
-    <div class="flex-none flex space-x-4">
-        <div class="flex">
+<mat-toolbar class="flex bg-white dark:bg-dark-base-background">
+    <div class="flex flex-grow">
+        <button class="dark:text-white" data-testid="header-menu" (click)="toggleMenu()" type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button>
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div class="flex-none flex space-x-4">
             <div class="flex">
-                <img height="40" width="40" class="w-10 m-auto h-full"
-                     src="https://angular.io/assets/images/logos/angular/angular.svg" alt="logo"/>
-            </div>
-            <div class="ml-4 flex">
-                <div class="m-auto">
-                    <div class="subheading-2 font-medium">Angular Material App</div>
+                <div class="flex">
+                    <img height="40" width="40" class="w-10 m-auto h-full"
+                         src="https://angular.io/assets/images/logos/angular/angular.svg" alt="logo"/>
+                </div>
+                <div class="ml-4 flex">
+                    <div class="m-auto">
+                        <div class="text-2xl font-medium dark:text-white">Angular Material App</div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+    <div class="flex-none flex">
+        <div class="flex theme-switch">
+            <button
+                    mat-icon-button
+                    class="m-auto dark:text-white"
+                    (click)="toggleTheme(!isDarkMode)"
+                    aria-label="theme switcher"
+                    matTooltip="Switch to the {{ isDarkMode ? 'light' : 'dark' }} theme"
+                    [matTooltipClass]="{ 'theme-switch-tooltip': true }"
+                    #tooltip="matTooltip"
+            >
+                <mat-icon>{{ isDarkMode ? "brightness_7" : "brightness_4" }}</mat-icon>
+            </button>
         </div>
     </div>
 

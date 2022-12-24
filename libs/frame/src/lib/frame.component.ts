@@ -11,10 +11,11 @@ import {ResponsiveService, ThemingService} from '@angular-material-app/core';
     styleUrls: ['./frame.component.scss'],
 })
 export class FrameComponent implements OnInit {
+    isDarkMode = false;
     @Input() sidenavContentMaxWidth: any;
     @Input() simpleHeader: boolean | undefined;
     @Input() hasThemeSwitch: boolean | undefined;
-    @HostBinding('class') className = '';
+    @HostBinding('class') className = 'dark-theme';
     mode = 'side';
     @ViewChild('sidenav', {static: false})
     sidenav!: MatSidenav;
@@ -39,6 +40,12 @@ export class FrameComponent implements OnInit {
 
     toggleMenu() {
         this.opened = !this.opened;
+    }
+
+    toggleTheme(b: boolean) {
+        this.isDarkMode = b;
+        this.className = b ? 'dark-theme' : '';
+        this.applyThemeOnOverlays()
     }
 
     /**

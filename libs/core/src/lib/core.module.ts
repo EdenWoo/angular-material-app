@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {AppComponent} from './app/app.component';
 import {RouterOutlet} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
     declarations: [AppComponent],
@@ -10,7 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
     imports: [
         CommonModule,
         RouterOutlet,
-        MatButtonModule
+        MatButtonModule,
+        MatTooltipModule
     ]
 })
 export class CoreModule {
