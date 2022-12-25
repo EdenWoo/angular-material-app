@@ -12,6 +12,7 @@ module.exports = {
       colors: {
           dark: {
               'base-background': '#0f0f0f',
+              'hover-bg': '#303134'
           },
           ...colors
       }

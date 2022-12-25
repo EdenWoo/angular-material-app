@@ -1,26 +1,26 @@
 <div class="">
     <mat-nav-list>
         <ng-container *ngFor="let nav of NAVIGATION_MENUS">
-            <div class="h-10 hover:bg-slate-100">
+            <div class="h-16 hover:bg-dark-hover-bg">
                 <a
                         *ngIf="!nav.target"
-                        class="sidenav__link flex cursor-pointer pl-6 h-full w-full"
+                        class="flex cursor-pointer pl-6 h-full w-full"
                         [routerLink]="[nav.link]"
                         [routerLinkActive]="['active', 'primary']"
                 >
                     <div class="my-auto flex">
                         <mat-icon class="mr-4 ">{{ nav?.icon }}</mat-icon>
-                        <div class="sidenav__name">{{ nav?.name }}</div>
+                        <div class="text-lg">{{ nav?.name }}</div>
                     </div>
                 </a>
                 <div
                         *ngIf="nav.target === '_blank'"
-                        class="sidenav__link flex cursor-pointer pl-6 h-full"
+                        class=" flex cursor-pointer pl-6 h-full"
                         (click)="newBlankPage(nav)"
                 >
                     <div class="my-auto flex">
                         <mat-icon class="mr-4">{{ nav?.icon }}</mat-icon>
-                        <div class="sidenav__name">{{ nav?.name }}</div>
+                        <div class="text-lg">{{ nav?.name }}</div>
                     </div>
                 </div>
             </div>

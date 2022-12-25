@@ -12,6 +12,10 @@
     background-color: mat.get-color-from-palette($background, app-bar);
     color: mat.get-color-from-palette($foreground, text);
   }
+
+  .mat-drawer-side {
+    border-right: none;
+  }
 }
 
 // put together
