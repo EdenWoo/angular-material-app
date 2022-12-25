@@ -1,10 +1,13 @@
-<mat-toolbar class="flex">
+<div class="flex dark:bg-dark-base-background h-16 px-4">
     <div class="flex flex-grow">
-        <button class="dark:text-white" data-testid="header-menu" (click)="toggleMenu()" type="button"
-                aria-label="Toggle sidenav"
-                mat-icon-button>
-            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
+        <div class="flex">
+            <button class="m-auto dark:text-white" data-testid="header-menu" (click)="toggleMenu()" type="button"
+                    aria-label="Toggle sidenav"
+                    mat-icon-button>
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+        </div>
+
         <div class="flex-none flex space-x-4">
             <div class="flex">
                 <div class="flex">
@@ -19,7 +22,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="flex-none flex">
         <div class="flex theme-switch">
@@ -37,16 +39,16 @@
         </div>
     </div>
 
-</mat-toolbar>
-<mat-sidenav-container class="" style="height: calc(100vh - 64px)">
+</div>
+<mat-sidenav-container class="dark:bg-dark-base-background" style="height: calc(100vh - 64px)">
 
     <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-        <div class="w-60">
+        <div class="w-60 dark:bg-dark-base-background">
             <ama-side-menu></ama-side-menu>
         </div>
     </mat-sidenav>
 
-    <mat-sidenav-content class="">
+    <mat-sidenav-content class="dark:bg-dark-base-background">
         <!-- *ngIf="true" hack is required here for router-outlet to work correctly.Otherwise, layout changes won't be registered and the view won't be updated! -->
         <router-outlet *ngIf="true"></router-outlet>
     </mat-sidenav-content>

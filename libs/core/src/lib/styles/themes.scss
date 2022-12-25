@@ -11,19 +11,7 @@
 @import './themes/dark-theme';
 @import './themes/nature-theme';
 
-
-.default-theme {
-  @include mat.all-component-themes($ama-theme);
-}
-
-.light-theme {
-  @include mat.all-component-themes($ama-light-theme);
-}
-
 .dark {
   @include mat.all-component-themes($ama-black-theme);
 }
 
-.nature-theme {
-  @include mat.all-component-themes($ama-nature-theme);
-}
