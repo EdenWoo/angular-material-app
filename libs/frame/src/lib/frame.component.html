@@ -1,4 +1,4 @@
-<div class="flex dark:bg-dark-base-background h-16 px-4">
+<mat-toolbar class="flex">
     <div class="flex flex-grow">
         <div class="flex">
             <button class="m-auto dark:text-white" data-testid="header-menu" (click)="toggleMenu()" type="button"
@@ -39,16 +39,16 @@
         </div>
     </div>
 
-</div>
-<mat-sidenav-container class="dark:bg-dark-base-background" style="height: calc(100vh - 64px)">
+</mat-toolbar>
+<mat-sidenav-container class="" style="height: calc(100vh - 64px)">
 
     <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-        <div class="w-60 dark:bg-dark-base-background">
+        <div class="w-60">
             <ama-side-menu></ama-side-menu>
         </div>
     </mat-sidenav>
 
-    <mat-sidenav-content class="dark:bg-dark-base-background">
+    <mat-sidenav-content class="">
         <!-- *ngIf="true" hack is required here for router-outlet to work correctly.Otherwise, layout changes won't be registered and the view won't be updated! -->
         <router-outlet *ngIf="true"></router-outlet>
     </mat-sidenav-content>

@@ -11,11 +11,27 @@
 @import './themes/light-theme';
 @import './themes/dark-theme';
 @import './themes/nature-theme';
+@import './themes/theme-variables';
 
 @include custom-components-theme($ama-light-theme);
 
+$dark-theme: (
+        color: (
+                primary: $angular-primary,
+                accent: $angular-accent,
+                warn: $angular-warn,
+                foreground: $dark-theme-foreground,
+                background: $dark-theme-background,
+        ),
+        primary: $angular-primary,
+        accent: $angular-accent,
+        warn: $angular-warn,
+        foreground: $dark-theme-foreground,
+        background: $dark-theme-background,
+);
+
 .dark {
-  @include mat.all-component-themes($ama-black-theme);
-  @include custom-components-theme($ama-black-theme);
+  @include mat.all-component-themes($dark-theme);
+  @include custom-components-theme($dark-theme);
 }
 

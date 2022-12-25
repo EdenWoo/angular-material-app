@@ -1,0 +1,34 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+:root {
+  --app-theme-primary: #fe5000;
+  --app-theme-primary-rgba: 254, 80, 0;
+  --app-theme-secondary: #fcc934;
+  --app-background-theme-dark: #202124;
+}
+
+$app-theme-primary: var(--app-theme-primary);
+$app-theme-primary-rgba: var(--app-theme-primary-rgba);
+$app-theme-secondary: var(--app-theme-secondary);
+$app-background-theme-dark: var(--app-background-theme-dark);
+$app-border-theme-dark: #5f6368;
+$app-border-theme-light: rgba(0, 0, 0, 0.2);
+$light-primary-text: white;
+
+$app-primary: (
+  500: $app-theme-primary,
+  contrast: (
+    500: $light-primary-text,
+  ),
+);
+$app-accent: (
+  500: $app-theme-secondary,
+  contrast: (
+    500: $light-primary-text,
+  ),
+);
+
+$angular-primary: mat.define-palette($app-primary, 500, 500, 500);
+$angular-accent: mat.define-palette($app-accent, 500, 500, 500);
+$angular-warn: mat.define-palette(mat.$red-palette);

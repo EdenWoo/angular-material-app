@@ -1,11 +1,38 @@
 @use '@angular/material' as mat;
 
-$ama-black-primary: mat.define-palette(mat.$grey-palette, 700, 300, 900);
-$ama-black-accent: mat.define-palette(mat.$blue-grey-palette, 400);
-$ama-black-warn: mat.define-palette(mat.$red-palette, 500);
+$dark-theme-foreground: (
+        base: #FFFFFF,
+        divider: rgba(241, 245, 249, 0.12),
+        dividers: rgba(241, 245, 249, 0.12),
+        disabled: #475569,
+        disabled-button: #1E293B,
+        disabled-text: #475569,
+        elevation: #000000,
+        hint-text: #64748B,
+        secondary-text: #94A3B8,
+        icon: #F1F5F9,
+        icons: #F1F5F9,
+        mat-icon: #94A3B8,
+        text: #9aa0a6,
+        slider-min: #FFFFFF,
+        slider-off: #64748B,
+        slider-off-active: #94A3B8
+);
 
-$ama-black-theme: mat.define-dark-theme(
-  $ama-black-primary,
-  $ama-black-accent,
-  $ama-black-warn
+$dark-theme-background: (
+        status-bar: #202124,
+        app-bar: #202124,
+        background: #202124,
+        hover: rgba(255, 255, 255, 0.05),
+        card: #1E293B,
+        dialog: #1E293B,
+        disabled-button: rgba(15, 23, 42, 0.38),
+        raised-button: #0F172A,
+        focused-button: #E2E8F0,
+        selected-button: rgba(255, 255, 255, 0.05),
+        selected-disabled-button: #1E293B,
+        disabled-button-toggle: #0F172A,
+        unselected-chip: #475569,
+        disabled-list-option: #E2E8F0,
+        tooltip: #64748B
 );
