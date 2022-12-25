@@ -3,6 +3,7 @@
 @use '@angular/material' as mat;
 
 @import 'styles-variables';
+@import 'themes/app-component-theme';
 
 @include mat.core();
 
@@ -11,7 +12,10 @@
 @import './themes/dark-theme';
 @import './themes/nature-theme';
 
+@include custom-components-theme($ama-light-theme);
+
 .dark {
   @include mat.all-component-themes($ama-black-theme);
+  @include custom-components-theme($ama-black-theme);
 }
 

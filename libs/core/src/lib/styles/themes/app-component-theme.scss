@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+@mixin sidenav-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-drawer {
+    background-color: mat.get-color-from-palette($background, app-bar);
+    color: mat.get-color-from-palette($foreground, text);
+  }
+}
+
+// put together
+@mixin custom-components-theme($theme) {
+  @include sidenav-component-theme($theme);
+}
