@@ -1,7 +1,0 @@
-@use '@angular/material' as mat;
-
-$ama-primary: mat.define-palette(mat.$indigo-palette, 800, 300, 900);
-$ama-accent: mat.define-palette(mat.$light-blue-palette);
-$ama-warn: mat.define-palette(mat.$pink-palette, 600);
-
-$ama-theme: mat.define-light-theme($ama-primary, $ama-accent, $ama-warn);

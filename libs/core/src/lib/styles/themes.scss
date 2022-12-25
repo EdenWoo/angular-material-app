@@ -7,13 +7,9 @@
 
 @include mat.core();
 
-@import './themes/default-theme';
 @import './themes/light-theme';
 @import './themes/dark-theme';
-@import './themes/nature-theme';
 @import './themes/theme-variables';
-
-@include custom-components-theme($ama-light-theme);
 
 $dark-theme: (
         color: (
@@ -29,6 +25,24 @@ $dark-theme: (
         foreground: $dark-theme-foreground,
         background: $dark-theme-background,
 );
+
+$light-theme: (
+        color: (
+                primary: $angular-primary,
+                accent: $angular-accent,
+                warn: $angular-warn,
+                foreground: $light-theme-foreground,
+                background: $light-theme-background,
+        ),
+        primary: $angular-primary,
+        accent: $angular-accent,
+        warn: $angular-warn,
+        foreground: $light-theme-foreground,
+        background: $light-theme-background,
+);
+
+@include mat.all-component-themes($light-theme);
+@include custom-components-theme($light-theme);
 
 .dark {
   @include mat.all-component-themes($dark-theme);

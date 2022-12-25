@@ -1,11 +1,38 @@
 @use '@angular/material' as mat;
 
-$ama-light-primary: mat.define-palette(mat.$grey-palette, 200, 500, 300);
-$ama-light-accent: mat.define-palette(mat.$brown-palette, 200);
-$ama-light-warn: mat.define-palette(mat.$deep-orange-palette, 200);
+$light-theme-foreground: (
+        base: #000000,
+        divider: #E2E8F0, /* slate.200 */
+        dividers: #E2E8F0, /* slate.200 */
+        disabled: #94A3B8, /* slate.400 */
+        disabled-button: #94A3B8, /* slate.400 */
+        disabled-text: #94A3B8, /* slate.400 */
+        elevation: #000000,
+        hint-text: #94A3B8, /* slate.400 */
+        secondary-text: #64748B, /* slate.500 */
+        icon: #64748B, /* slate.500 */
+        icons: #64748B, /* slate.500 */
+        mat-icon: #64748B, /* slate.500 */
+        text: #1E293B, /* slate.800 */
+        slider-min: #1E293B, /* slate.800 */
+        slider-off: #CBD5E1, /* slate.300 */
+        slider-off-active: #94A3B8 /* slate.400 */
+);
 
-$ama-light-theme: mat.define-light-theme(
-  $ama-light-primary,
-  $ama-light-accent,
-  $ama-light-warn
+$light-theme-background: (
+        status-bar: #CBD5E1, /* slate.300 */
+        app-bar: #FFFFFF,
+        background: #FFFFFF,
+        hover: rgba(148, 163, 184, 0.12), /* slate.400 + opacity */
+        card: #FFFFFF,
+        dialog: #FFFFFF,
+        disabled-button: rgba(148, 163, 184, 0.38), /* slate.400 + opacity */
+        raised-button: #FFFFFF,
+        focused-button: #64748B, /* slate.500 */
+        selected-button: #E2E8F0, /* slate.200 */
+        selected-disabled-button: #E2E8F0, /* slate.200 */
+        disabled-button-toggle: #CBD5E1, /* slate.300 */
+        unselected-chip: #E2E8F0, /* slate.200 */
+        disabled-list-option: #CBD5E1, /* slate.300 */
+        tooltip: #1E293B /* slate.800 */
 );
