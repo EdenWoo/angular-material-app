@@ -62,6 +62,6 @@ export class FrameComponent implements OnInit {
         if (themeClassesToRemove.length) {
             overlayContainerClasses.remove(...themeClassesToRemove);
         }
-        overlayContainerClasses.add(this.className);
+        overlayContainerClasses.add('theme-dark');
     }
 }

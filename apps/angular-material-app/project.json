@@ -25,7 +25,8 @@
         ],
         "styles": [
           "@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/angular-material-app/src/styles.scss"
+          "apps/angular-material-app/src/styles.scss",
+          "libs/core/src/lib/styles/themes.scss"
         ],
         "scripts": []
       },
