@@ -2,8 +2,7 @@
 
 ## Progress
 1. Onboarding form
-![image](https://user-images.githubusercontent.com/17792496/209270497-d81aa6eb-3317-4372-892f-bf79c71015bb.png)
-
+<img width="1904" alt="image" src="https://user-images.githubusercontent.com/17792496/209464001-189524ce-bc99-49bf-b760-b2aadf28c26e.png">
 ## Development server
 
 Run `nx serve angular-material-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
