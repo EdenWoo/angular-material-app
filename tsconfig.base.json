@@ -30,6 +30,9 @@
       "@angular-material-app/home": [
         "libs/home/src/index.ts"
       ],
+      "@angular-material-app/hotel": [
+        "libs/hotel/src/index.ts"
+      ],
       "@angular-material-app/onboarding": [
         "libs/onboarding/src/index.ts"
       ]
