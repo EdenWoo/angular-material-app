@@ -40,6 +40,19 @@ const routes: Routes = [
             },
         ],
     },
+    {
+        path: '',
+        canActivate: [],
+        canActivateChild: [],
+        component: FrameComponent,
+        children: [
+            {
+                path: 'hotel',
+                // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+                loadChildren: () => import('libs/hotel/src/lib/hotel.module').then((m) => m.HotelModule),
+            },
+        ],
+    },
     {path: '**', redirectTo: '/dashboard'},
 ];
 
