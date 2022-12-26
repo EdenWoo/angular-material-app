@@ -5,10 +5,12 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {FormlyMaterialModule} from '@ngx-formly/material';
 import {FormlyModule} from '@ngx-formly/core';
 import {HotelRoutingModule} from './hotel-routing.module';
+import {HotelSearchFormComponent} from './hotel-search-form/hotel-search-form.component';
 
 @NgModule({
     declarations: [
-        HotelComponent
+        HotelComponent,
+        HotelSearchFormComponent
     ],
     imports: [
         CommonModule,
