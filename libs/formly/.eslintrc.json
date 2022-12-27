@@ -15,7 +15,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "angularMaterialApp",
+            "prefix": "ama",
             "style": "camelCase"
           }
         ],
@@ -23,7 +23,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "angular-material-app",
+            "prefix": "ama",
             "style": "kebab-case"
           }
         ]
