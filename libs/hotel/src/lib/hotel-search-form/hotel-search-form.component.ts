@@ -23,6 +23,10 @@ export class HotelSearchFormComponent {
                         // label: 'Search places, hotel or more',
                         placeholder: 'Search places, hotel or more',
                         appearance: 'outline',
+                        addonLeft: {
+                            icon: 'search',
+                            className: 'mx-2 text-blue-500'
+                        },
                     },
                 },
             ]

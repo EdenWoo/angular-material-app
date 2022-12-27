@@ -5,11 +5,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent, CoreModule} from '@angular-material-app/core';
 import {AppRoutingModule} from './app-routing.module';
 import {FormlyModule} from '@ngx-formly/core';
-import {FORMLY_CONFIG} from '@angular-material-app/formly';
+import {AmaFormlyModule, FORMLY_CONFIG} from '@angular-material-app/formly';
 
 @NgModule({
     declarations: [],
-    imports: [BrowserModule, BrowserAnimationsModule, CoreModule, AppRoutingModule, FormlyModule.forRoot(FORMLY_CONFIG)],
+    imports: [BrowserModule, BrowserAnimationsModule, CoreModule, AppRoutingModule, FormlyModule.forRoot(FORMLY_CONFIG), AmaFormlyModule],
     providers: [],
     bootstrap: [AppComponent],
 })

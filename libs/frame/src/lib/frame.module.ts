@@ -5,7 +5,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {RouterModule} from '@angular/router';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatIconModule} from '@angular/material/icon';
-import {FormlyModule} from '@angular-material-app/formly';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -28,7 +27,6 @@ import {SideMenuComponent} from './side-menu/side-menu.component';
     imports: [
         CommonModule,
         MatIconModule,
-        FormlyModule,
         ReactiveFormsModule,
         MatToolbarModule,
         RouterModule,
