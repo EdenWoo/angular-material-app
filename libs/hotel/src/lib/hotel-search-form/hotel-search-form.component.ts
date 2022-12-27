@@ -30,6 +30,40 @@ export class HotelSearchFormComponent {
                     },
                 },
             ]
-        }
+        },
+        {
+            key: 'Status',
+            type: 'menu-select',
+            // defaultValue: ['New Lead'],
+            props: {
+                label: 'Status',
+                options: [
+                    {
+                        key: 'New Lead',
+                        label: 'New Lead',
+                    },
+                    {
+                        label: 'Nurture',
+                        key: 'Nurture',
+                    },
+                    {
+                        key: 'Appraisal',
+                        label: 'Appraisal',
+                    },
+                    {
+                        label: 'Test Drive',
+                        key: 'Test Drive',
+                    },
+                    {
+                        label: 'Converted',
+                        key: 'Converted',
+                    },
+                    {
+                        label: 'Close Lost',
+                        key: 'Close Lost',
+                    },
+                ],
+            },
+        },
     ];
 }
