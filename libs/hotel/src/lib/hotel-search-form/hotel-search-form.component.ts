@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
 
@@ -7,7 +7,8 @@ import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
     templateUrl: './hotel-search-form.component.html',
     styles: [],
 })
-export class HotelSearchFormComponent {
+export class HotelSearchFormComponent implements OnInit {
+
     form = new FormGroup({});
     model = {};
     options: FormlyFormOptions = {};
@@ -33,11 +34,11 @@ export class HotelSearchFormComponent {
         },
         {
             key: 'Status',
-            type: 'menu-select',
-            // defaultValue: ['New Lead'],
+            type: 'ama-select',
+            defaultValue: ['New Lead', 'Nurture'],
             props: {
                 label: 'Status',
-                options: [
+                optionList: [
                     {
                         key: 'New Lead',
                         label: 'New Lead',
@@ -66,4 +67,10 @@ export class HotelSearchFormComponent {
             },
         },
     ];
+
+    ngOnInit(): void {
+        this.form.valueChanges.subscribe(value => {
+            console.log(value)
+        })
+    }
 }

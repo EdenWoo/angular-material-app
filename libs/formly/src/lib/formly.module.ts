@@ -6,6 +6,7 @@ import {FormlyMaterialModule} from '@ngx-formly/material';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MenuSelectModule} from './menu-select/src/menu-select.module';
+import {FormlyMatSelectModule} from './select';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import {MenuSelectModule} from './menu-select/src/menu-select.module';
         ReactiveFormsModule,
         FormlyMaterialModule,
         MatIconModule,
-        MenuSelectModule
+        MenuSelectModule,
+        FormlyMatSelectModule
     ]
 })
 export class AmaFormlyModule {
