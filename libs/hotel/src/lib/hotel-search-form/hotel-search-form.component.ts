@@ -34,7 +34,7 @@ export class HotelSearchFormComponent implements OnInit {
         },
         {
             key: 'Status',
-            type: 'ama-select',
+            type: 'ama-dropdown-option-select',
             defaultValue: ['New Lead', 'Nurture'],
             props: {
                 label: 'Status',

@@ -7,7 +7,7 @@ import {FormlySelectModule} from '@ngx-formly/core/select';
 import {FormlyMatFormFieldModule} from '@ngx-formly/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 
-import {FormlyFieldSelect} from './select.type';
+import {FormlyFieldSelect} from './dropdown-option-select.type';
 import {MatPseudoCheckboxModule} from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
@@ -28,7 +28,7 @@ import {MatListModule} from '@angular/material/list';
         FormlyModule.forChild({
             types: [
                 {
-                    name: 'ama-select',
+                    name: 'ama-dropdown-option-select',
                     component: FormlyFieldSelect,
                 },
             ],
@@ -41,5 +41,5 @@ import {MatListModule} from '@angular/material/list';
         FormsModule,
     ],
 })
-export class FormlyMatSelectModule {
+export class DropdownOptionSelectModule {
 }
