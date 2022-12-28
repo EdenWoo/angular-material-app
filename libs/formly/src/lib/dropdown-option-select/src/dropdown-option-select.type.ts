@@ -40,8 +40,8 @@ export interface FormlySelectFieldConfig extends FormlyFieldConfig<SelectProps> 
         </button>
 
         <mat-menu #menu="matMenu" class="w-64">
-            <mat-selection-list #dropdownList (selectionChange)="selectionChange($event)" [(ngModel)]="selected">
-                <mat-list-option (click)="$event.stopPropagation(); $event.preventDefault()"
+            <mat-selection-list #dropdownList [(ngModel)]="selected">
+                <mat-list-option (click)="$event.stopPropagation(); $event.preventDefault(); clickOption(option)"
                                  *ngFor="let option of props.optionList" checkboxPosition="before"
                                  [value]="option.value"
                                  [selected]="selectedSet.get(option.value)">
@@ -60,8 +60,8 @@ export class FormlyFieldSelect extends FieldType<FieldTypeConfig<SelectProps>> i
 
     selectedSet = new Map()
 
-    selectionChange($event: any) {
-        this.selectedSet.set($event.value, !this.selectedSet.get($event.value));
+    clickOption(option: any){
+        this.selectedSet.set(option.value, !this.selectedSet.get(option.value));
         this.formControl.setValue(this.selected)
     }
 

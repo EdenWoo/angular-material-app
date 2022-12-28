@@ -40,28 +40,28 @@ export class HotelSearchFormComponent implements OnInit {
                 label: 'Status',
                 optionList: [
                     {
-                        key: 'New Lead',
+                        value: 'New Lead',
                         label: 'New Lead',
                     },
                     {
                         label: 'Nurture',
-                        key: 'Nurture',
+                        value: 'Nurture',
                     },
                     {
-                        key: 'Appraisal',
+                        value: 'Appraisal',
                         label: 'Appraisal',
                     },
                     {
                         label: 'Test Drive',
-                        key: 'Test Drive',
+                        value: 'Test Drive',
                     },
                     {
                         label: 'Converted',
-                        key: 'Converted',
+                        value: 'Converted',
                     },
                     {
                         label: 'Close Lost',
-                        key: 'Close Lost',
+                        value: 'Close Lost',
                     },
                 ],
             },
