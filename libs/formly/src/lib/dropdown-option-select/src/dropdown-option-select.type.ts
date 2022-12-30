@@ -4,12 +4,7 @@ import {FieldType, FormlyFieldProps} from '@ngx-formly/material/form-field';
 import {FormlyFieldSelectProps} from '@ngx-formly/core/select';
 
 interface SelectProps extends FormlyFieldProps, FormlyFieldSelectProps {
-    multiple?: boolean;
-    selectAllOption?: string;
-    disableOptionCentering?: boolean;
-    typeaheadDebounceInterval?: number;
-    compareWith?: (o1: any, o2: any) => boolean;
-
+    widthClassName: ''
     optionList: any[]
 }
 
@@ -39,15 +34,25 @@ export interface FormlySelectFieldConfig extends FormlyFieldConfig<SelectProps> 
             </div>
         </button>
 
-        <mat-menu #menu="matMenu" class="w-64">
-            <mat-selection-list #dropdownList [(ngModel)]="selected">
-                <mat-list-option (click)="$event.stopPropagation(); $event.preventDefault(); clickOption(option)"
-                                 *ngFor="let option of props.optionList" checkboxPosition="before"
-                                 [value]="option.value"
-                                 [selected]="selectedSet.get(option.value)">
-                    {{option.label}}
-                </mat-list-option>
-            </mat-selection-list>
+        <mat-menu #menu="matMenu" class="{{props.widthClassName || 'w-64'}}">
+            <div class="flex flex-col">
+                <div class="m-4 text-lg font-semibold">{{props.label}}</div>
+
+                <mat-selection-list #dropdownList [(ngModel)]="selected">
+                    <mat-list-option (click)="$event.stopPropagation(); $event.preventDefault(); clickOption(option)"
+                                     *ngFor="let option of props.optionList" checkboxPosition="before"
+                                     [value]="option.value"
+                                     [selected]="selectedSet.get(option.value)">
+                        {{option.label}}
+                    </mat-list-option>
+                </mat-selection-list>
+
+                <div class="flex justify-end mx-4">
+                    <button [disabled]="selectedSet.size === 0" (click)="onResetClicked($event)" mat-button>Clear
+                    </button>
+                </div>
+            </div>
+
         </mat-menu>
 
     `,
@@ -89,5 +94,12 @@ export class FormlyFieldSelect extends FieldType<FieldTypeConfig<SelectProps>> i
         } else if (this.totalCheckedCount > 1 && this.totalCheckedCount === this.props?.optionList.length) {
             this.summaryLabel = ('All ' + this.props.label);
         }
+    }
+
+    onResetClicked($event: MouseEvent) {
+        $event.stopPropagation();
+        this.formControl.setValue([]);
+        this.selectedSet.clear();
+        this.updateLabel();
     }
 }

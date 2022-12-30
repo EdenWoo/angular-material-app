@@ -38,6 +38,7 @@ export class HotelSearchFormComponent implements OnInit {
             defaultValue: [],
             props: {
                 label: 'Property type',
+                widthClassName: 'w-[500px]',
                 optionList: [
                     {
                         value: 'Bed and breakfast',
