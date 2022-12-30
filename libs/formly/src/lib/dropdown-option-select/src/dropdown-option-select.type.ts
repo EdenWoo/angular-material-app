@@ -32,7 +32,7 @@ export interface FormlySelectFieldConfig extends FormlyFieldConfig<SelectProps> 
                 <div class="flex mr-1">
                     <mat-icon class="m-auto">filter_alt</mat-icon>
                 </div>
-                <span class="font-normal">label</span>
+                <span class="font-normal">{{summaryLabel || props.label}}</span>
                 <div class="flex">
                     <mat-icon class="m-auto">{{ menu.closed ? "arrow_drop_down" : "arrow_drop_up" }}</mat-icon>
                 </div>
@@ -57,23 +57,37 @@ export interface FormlySelectFieldConfig extends FormlyFieldConfig<SelectProps> 
 export class FormlyFieldSelect extends FieldType<FieldTypeConfig<SelectProps>> implements OnInit {
     selected = null;
     totalCheckedCount = 0
-
+    summaryLabel = '';
     selectedSet = new Map()
 
-    clickOption(option: any){
+    clickOption(option: any) {
         this.selectedSet.set(option.value, !this.selectedSet.get(option.value));
-        this.formControl.setValue(this.selected)
+        this.formControl.setValue(this.selected);
+        this.updateLabel()
     }
 
     ngOnInit() {
-        console.log(this.model)
-        console.log(this.formControl.value)
         const initValue = this.formControl.value;
         if (initValue && initValue.length > 0) {
             initValue.map((value: any) => {
                 this.selectedSet.set(value, true);
             })
         }
-        console.log(this.selectedSet)
+        this.updateLabel();
+    }
+
+    updateLabel() {
+        const checkedOptions = Array.from(this.selectedSet, ([option, selected]) => ({
+            option,
+            selected
+        })).filter((item) => !!item.selected)
+        this.totalCheckedCount = checkedOptions.length;
+        if (this.totalCheckedCount === 1) {
+            this.summaryLabel = checkedOptions[0].option;
+        } else if (this.totalCheckedCount > 1 && this.totalCheckedCount < this.props?.optionList.length) {
+            this.summaryLabel = (checkedOptions[0].option + ' ' + '+ ' + (this.totalCheckedCount - 1));
+        } else if (this.totalCheckedCount > 1 && this.totalCheckedCount === this.props?.optionList.length) {
+            this.summaryLabel = ('All ' + this.props.label);
+        }
     }
 }

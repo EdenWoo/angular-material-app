@@ -5,7 +5,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {FormlyMaterialModule} from '@ngx-formly/material';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MenuSelectModule} from './menu-select/src/menu-select.module';
 import {DropdownOptionSelectModule} from './dropdown-option-select/src/dropdown-option-select.module';
 
 @NgModule({
@@ -18,7 +17,6 @@ import {DropdownOptionSelectModule} from './dropdown-option-select/src/dropdown-
         ReactiveFormsModule,
         FormlyMaterialModule,
         MatIconModule,
-        MenuSelectModule,
         DropdownOptionSelectModule
     ]
 })
