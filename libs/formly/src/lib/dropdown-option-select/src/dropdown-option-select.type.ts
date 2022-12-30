@@ -4,7 +4,7 @@ import {FieldType, FormlyFieldProps} from '@ngx-formly/material/form-field';
 import {FormlyFieldSelectProps} from '@ngx-formly/core/select';
 
 interface SelectProps extends FormlyFieldProps, FormlyFieldSelectProps {
-    widthClassName: ''
+    panelClassName: ''
     optionList: any[]
 }
 
@@ -34,7 +34,7 @@ export interface FormlySelectFieldConfig extends FormlyFieldConfig<SelectProps> 
             </div>
         </button>
 
-        <mat-menu #menu="matMenu" class="{{props.widthClassName || 'w-64'}}">
+        <mat-menu #menu="matMenu" class="{{props.panelClassName || 'w-64'}}">
             <div class="flex flex-col">
                 <div class="m-4 text-lg font-semibold">{{props.label}}</div>
 

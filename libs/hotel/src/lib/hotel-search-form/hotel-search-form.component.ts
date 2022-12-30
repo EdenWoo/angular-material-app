@@ -41,7 +41,7 @@ export class HotelSearchFormComponent implements OnInit {
                     defaultValue: [],
                     props: {
                         label: 'Property type',
-                        widthClassName: 'w-[500px]',
+                        panelClassName: 'w-[500px]',
                         optionList: [
                             {
                                 value: 'Bed and breakfast',
@@ -84,7 +84,7 @@ export class HotelSearchFormComponent implements OnInit {
                     defaultValue: [],
                     props: {
                         label: 'Sort By',
-                        widthClassName: 'w-[500px]',
+                        panelClassName: 'w-[500px]',
                         optionList: [
                             {
                                 value: 'Relevance',
@@ -111,7 +111,7 @@ export class HotelSearchFormComponent implements OnInit {
                     defaultValue: [],
                     props: {
                         label: 'Offers',
-                        widthClassName: 'w-[500px]',
+                        panelClassName: 'w-[500px]',
                         optionList: [
                             {
                                 value: 'Free cancellation',
