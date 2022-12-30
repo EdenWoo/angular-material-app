@@ -19,7 +19,7 @@ export class HotelSearchFormComponent implements OnInit {
                 {
                     key: 'keyword',
                     type: 'input',
-                    className: 'w-full col-span-6',
+                    className: 'col-span-4',
                     props: {
                         // label: 'Search places, hotel or more',
                         placeholder: 'Search places, hotel or more',
@@ -33,47 +33,102 @@ export class HotelSearchFormComponent implements OnInit {
             ]
         },
         {
-            key: 'propertyType',
-            type: 'ama-dropdown-option-select',
-            defaultValue: [],
-            props: {
-                label: 'Property type',
-                widthClassName: 'w-[500px]',
-                optionList: [
-                    {
-                        value: 'Bed and breakfast',
-                        label: 'Bed and breakfast',
+            fieldGroupClassName: 'flex gap-4',
+            fieldGroup: [
+                {
+                    key: 'propertyType',
+                    type: 'ama-dropdown-option-select',
+                    defaultValue: [],
+                    props: {
+                        label: 'Property type',
+                        widthClassName: 'w-[500px]',
+                        optionList: [
+                            {
+                                value: 'Bed and breakfast',
+                                label: 'Bed and breakfast',
+                            },
+                            {
+                                label: 'Motels',
+                                value: 'Motels',
+                            },
+                            {
+                                value: 'Hostels',
+                                label: 'Hostels',
+                            },
+                            {
+                                label: 'Beach hotels',
+                                value: 'Beach hotels',
+                            },
+                            {
+                                label: 'Spa hotels',
+                                value: 'Spa hotels',
+                            },
+                            {
+                                label: 'Resorts',
+                                value: 'Resorts',
+                            },
+                            {
+                                label: 'Inns',
+                                value: 'Inns',
+                            },
+                            {
+                                label: 'Other',
+                                value: 'Other',
+                            },
+                        ],
                     },
-                    {
-                        label: 'Motels',
-                        value: 'Motels',
+                },
+                {
+                    key: 'sortBy',
+                    type: 'ama-dropdown-option-select',
+                    defaultValue: [],
+                    props: {
+                        label: 'Sort By',
+                        widthClassName: 'w-[500px]',
+                        optionList: [
+                            {
+                                value: 'Relevance',
+                                label: 'Relevance',
+                            },
+                            {
+                                label: 'Lowest price',
+                                value: 'Lowest price',
+                            },
+                            {
+                                value: 'Highest Price',
+                                label: 'Highest Price',
+                            },
+                            {
+                                label: 'Most viewed',
+                                value: 'Most viewed',
+                            },
+                        ],
                     },
-                    {
-                        value: 'Hostels',
-                        label: 'Hostels',
+                },
+                {
+                    key: 'offers',
+                    type: 'ama-dropdown-option-select',
+                    defaultValue: [],
+                    props: {
+                        label: 'Offers',
+                        widthClassName: 'w-[500px]',
+                        optionList: [
+                            {
+                                value: 'Free cancellation',
+                                label: 'Free cancellation',
+                            },
+                            {
+                                label: 'COVID-19-responder rooms',
+                                value: 'COVID-19-responder rooms',
+                            },
+                            {
+                                value: 'Special offers',
+                                label: 'Special offers',
+                            },
+                        ],
                     },
-                    {
-                        label: 'Beach hotels',
-                        value: 'Beach hotels',
-                    },
-                    {
-                        label: 'Spa hotels',
-                        value: 'Spa hotels',
-                    },
-                    {
-                        label: 'Resorts',
-                        value: 'Resorts',
-                    },
-                    {
-                        label: 'Inns',
-                        value: 'Inns',
-                    },
-                    {
-                        label: 'Other',
-                        value: 'Other',
-                    },
-                ],
-            },
+                },
+            ]
         },
     ];
 
