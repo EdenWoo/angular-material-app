@@ -3,7 +3,8 @@ import {Router} from '@angular/router';
 
 export const NAVIGATION_MENUS = [
     {name: 'Home', link: '/home', icon: 'dashboard'},
-    {name: 'Onboarding', link: '/onboarding', icon: 'people'}
+    {name: 'Onboarding', link: '/onboarding', icon: 'people'},
+    {name: 'Hotel', link: '/hotel', icon: 'people'}
 ];
 
 @Component({
