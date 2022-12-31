@@ -7,7 +7,7 @@ import {FormlySelectModule} from '@ngx-formly/core/select';
 import {FormlyMatFormFieldModule} from '@ngx-formly/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 
-import {MatPseudoCheckboxModule} from '@angular/material/core';
+import {MatPseudoCheckboxModule, MatRippleModule} from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -43,6 +43,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
         FormsModule,
         MatTabsModule,
         MatButtonToggleModule,
+        MatRippleModule,
     ],
 })
 export class HorizontalTabSelectModule {

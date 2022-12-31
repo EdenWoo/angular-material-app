@@ -16,10 +16,21 @@ export interface HorizontalTabSelectFieldConfig extends FormlyFieldConfig<Select
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'horizontal-tab-select',
     template: `
-        <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [formControl]="formControl">
-            <mat-button-toggle class="w-32 h-14 flex justify-center" value="hotel">Hotel</mat-button-toggle>
-            <mat-button-toggle class="w-32 h-14 flex justify-center" value="hotelRentals">Hotel Rentals</mat-button-toggle>
-        </mat-button-toggle-group>
+        <div class="flex divide-x divide-solid divide-light-border dark:divide-dark-border h-14 justify-center border border-light-border border-solid rounded dark:border-dark-border cursor-pointer">
+            <div class="w-32 flex justify-center" matRipple>
+                <div class="m-auto flex justify-between gap-2">
+                    <mat-icon class="mat-18">hotel</mat-icon>
+                    <div class="flex">
+                        <div class="m-auto">Hotels</div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-32 flex justify-center bg-primary" matRipple>
+                <div class="m-auto">
+                    Hotel Rentals
+                </div>
+            </div>
+        </div>
     `,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })

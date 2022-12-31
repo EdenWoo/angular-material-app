@@ -9,17 +9,22 @@ module.exports = {
         content: ['./apps/**/*.{html,ts}', './libs/**/*.{html,ts}'],
     },
     theme: {
-      colors: {
-          dark: {
-              'base-background': '#0f0f0f',
-              'hover-bg': '#303134'
-          },
-          light: {
-              'base-background': '#ffffff',
-              'hover-bg': '#f1f3f4'
-          },
-          ...colors
-      }
+        colors: {
+            primary: '#FE5000',
+            dark: {
+                'base-background': '#0f0f0f',
+                'hover-bg': '#303134',
+                border: '#757577',
+                'active-background': '#e8f0fe'
+            },
+            light: {
+                'base-background': '#ffffff',
+                'hover-bg': '#f1f3f4',
+                border: '#9E9E9E',
+                'active-background': '#e8f0fe'
+            },
+            ...colors
+        }
     },
     darkMode: 'class', // or 'media' or 'class'
 }
