@@ -30,6 +30,24 @@ export class HotelSearchFormComponent implements OnInit {
                         },
                     },
                 },
+                {
+                    key: 'dateFrom',
+                    type: 'datepicker',
+                    className: 'col-span-2',
+                    props: {
+                        appearance: 'outline',
+                        placeholder: 'Date From',
+                    },
+                },
+                {
+                    key: 'dateTo',
+                    type: 'datepicker',
+                    className: 'col-span-2',
+                    props: {
+                        appearance: 'outline',
+                        placeholder: 'Date To',
+                    },
+                },
             ]
         },
         {
