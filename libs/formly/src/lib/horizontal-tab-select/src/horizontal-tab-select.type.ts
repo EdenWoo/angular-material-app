@@ -11,13 +11,13 @@ interface SelectProps extends FormlyFieldProps, FormlyFieldSelectProps {
 export interface HorizontalTabSelectFieldConfig extends FormlyFieldConfig<SelectProps> {
     type: 'select' | Type<HorizontalTabSelect>;
 }
-
+// divide-x divide-solid divide-light-border dark:divide-dark-border
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'horizontal-tab-select',
     template: `
-        <div class="flex divide-x divide-solid divide-light-border dark:divide-dark-border h-14 justify-center border border-light-border border-solid rounded dark:border-dark-border cursor-pointer">
-            <div class="w-32 flex justify-center" matRipple>
+        <div class="flex h-14 justify-center cursor-pointer">
+            <div class="w-32 flex justify-center border-l border-t border-b border-light-border border-solid rounded-l dark:border-dark-border" matRipple>
                 <div class="m-auto flex justify-between gap-2">
                     <mat-icon class="mat-18">hotel</mat-icon>
                     <div class="flex">
@@ -25,7 +25,12 @@ export interface HorizontalTabSelectFieldConfig extends FormlyFieldConfig<Select
                     </div>
                 </div>
             </div>
-            <div class="w-32 flex justify-center bg-primary" matRipple>
+            <div class="w-32 flex justify-center border-l border-t border-b border-light-border border-solid dark:border-dark-border" matRipple>
+                <div class="m-auto">
+                    Hotel Rentals
+                </div>
+            </div>
+            <div class="w-32 flex justify-center border-l bg-primary border-r border-t border-b border-primary border-solid rounded-r" matRipple>
                 <div class="m-auto">
                     Hotel Rentals
                 </div>

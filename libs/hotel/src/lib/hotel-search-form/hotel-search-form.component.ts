@@ -51,7 +51,7 @@ export class HotelSearchFormComponent implements OnInit {
                 {
                     key: 'type',
                     type: 'ama-horizontal-tab-select',
-                    className: 'col-span-2',
+                    className: 'col-span-3',
                     props: {
                         appearance: 'outline',
                         placeholder: 'Date To',
