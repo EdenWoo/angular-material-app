@@ -10,7 +10,7 @@ module.exports = {
     },
     theme: {
         colors: {
-            primary: '#FE5000',
+            primary: '#E91E63',
             dark: {
                 'base-background': '#0f0f0f',
                 'hover-bg': '#303134',
