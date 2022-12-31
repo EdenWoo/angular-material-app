@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DropdownOptionSelectModule} from './dropdown-option-select';
 import {FormlyMatDatepickerModule} from '@ngx-formly/material/datepicker';
 import {DateAdapter, MAT_DATE_FORMATS, NativeDateAdapter} from '@angular/material/core';
+import {HorizontalTabSelectModule} from './horizontal-tab-select';
 
 export const DATE_FORMATS = {
     parse: {
@@ -32,7 +33,8 @@ export const DATE_FORMATS = {
         FormlyMaterialModule,
         MatIconModule,
         DropdownOptionSelectModule,
-        FormlyMatDatepickerModule
+        FormlyMatDatepickerModule,
+        HorizontalTabSelectModule
     ],
     providers: [
         {provide: DateAdapter, useClass: NativeDateAdapter},
