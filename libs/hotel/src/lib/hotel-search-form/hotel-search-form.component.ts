@@ -77,6 +77,7 @@ export class HotelSearchFormComponent implements OnInit {
                     defaultValue: [],
                     props: {
                         label: 'Property type',
+                        icon: 'house',
                         panelClassName: 'w-[500px]',
                         optionList: [
                             {
@@ -147,6 +148,7 @@ export class HotelSearchFormComponent implements OnInit {
                     defaultValue: [],
                     props: {
                         label: 'Offers',
+                        icon: 'sell',
                         panelClassName: 'w-[500px]',
                         optionList: [
                             {
@@ -160,6 +162,34 @@ export class HotelSearchFormComponent implements OnInit {
                             {
                                 value: 'Special offers',
                                 label: 'Special offers',
+                            },
+                        ],
+                    },
+                },
+                {
+                    key: 'hotelClass',
+                    type: 'ama-dropdown-option-select',
+                    defaultValue: [],
+                    props: {
+                        label: 'Hotel Class',
+                        panelClassName: 'w-[500px]',
+                        icon: 'stars',
+                        optionList: [
+                            {
+                                value: '2-star',
+                                label: '2-star',
+                            },
+                            {
+                                value: '3-star',
+                                label: '3-star',
+                            },
+                            {
+                                value: '4-star',
+                                label: '4-star',
+                            },
+                            {
+                                value: '5-star',
+                                label: '6-star',
                             },
                         ],
                     },

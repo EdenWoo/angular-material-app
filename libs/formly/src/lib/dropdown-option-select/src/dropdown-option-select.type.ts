@@ -5,6 +5,7 @@ import {FormlyFieldSelectProps} from '@ngx-formly/core/select';
 
 interface SelectProps extends FormlyFieldProps, FormlyFieldSelectProps {
     panelClassName: ''
+    icon: ''
     optionList: any[]
 }
 
@@ -25,9 +26,13 @@ export interface FormlySelectFieldConfig extends FormlyFieldConfig<SelectProps> 
         >
             <div class="flex">
                 <div class="flex mr-1">
-                    <mat-icon class="m-auto">filter_alt</mat-icon>
+                    <mat-icon class="m-auto">{{props.icon ? props.icon : 'filter_alt'}}</mat-icon>
                 </div>
-                <span class="font-normal">{{summaryLabel || props.label}}</span>
+                <div class="flex">
+                    <div class="m-auto">
+                        {{summaryLabel || props.label}}
+                    </div>
+                </div>
                 <div class="flex">
                     <mat-icon class="m-auto">{{ menu.closed ? "arrow_drop_down" : "arrow_drop_up" }}</mat-icon>
                 </div>
