@@ -7,6 +7,7 @@ import {FormlyModule} from '@ngx-formly/core';
 import {HotelRoutingModule} from './hotel-routing.module';
 import {HotelSearchFormComponent} from './hotel-search-form/hotel-search-form.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { HotelListComponent } from './hotel-list/hotel-list.component';
         ReactiveFormsModule,
         FormlyMaterialModule,
         FormlyModule,
-        HotelRoutingModule
+        HotelRoutingModule,
+        MatButtonModule
     ]
 })
 export class HotelModule {
