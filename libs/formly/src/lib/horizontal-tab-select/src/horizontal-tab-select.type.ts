@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit, Type} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Type} from '@angular/core';
 import {FieldTypeConfig, FormlyFieldConfig} from '@ngx-formly/core';
 import {FieldType, FormlyFieldProps} from '@ngx-formly/material/form-field';
 import {FormlyFieldSelectProps} from '@ngx-formly/core/select';
@@ -9,78 +9,55 @@ interface SelectProps extends FormlyFieldProps, FormlyFieldSelectProps {
 }
 
 export interface HorizontalTabSelectFieldConfig extends FormlyFieldConfig<SelectProps> {
-    type: 'select' | Type<HorizontalTabSelect>;
+    type: 'select' | Type<HorizontalTabSelectComponent>;
 }
-// divide-x divide-solid divide-light-border dark:divide-dark-border
+
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'horizontal-tab-select',
+    selector: 'ama-horizontal-tab-select',
     template: `
         <div class="flex h-14 justify-center cursor-pointer">
-            <div class="w-32 flex justify-center border-l border-t border-b border-light-border border-solid rounded-l dark:border-dark-border" matRipple>
-                <div class="m-auto flex justify-between gap-2">
-                    <mat-icon class="mat-18">hotel</mat-icon>
-                    <div class="flex">
-                        <div class="m-auto">Hotels</div>
+            <ng-container *ngFor="let item of (props.optionList || []); let i = index">
+                <div *ngIf="i === 0"
+                     (click)="selectItem(item)"
+                     class="{{selected?.value === item.value ? 'bg-primary border-primary' : 'border-light-border dark:border-dark-border'}} w-40 flex justify-center border-l border-t border-b border-solid rounded-l"
+                     matRipple>
+                    <div class="m-auto flex justify-between gap-2">
+                        <mat-icon class="mat-18">{{item.icon}}</mat-icon>
+                        <div class="flex">
+                            <div class="m-auto">{{item.label}}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="w-32 flex justify-center border-l border-t border-b border-light-border border-solid dark:border-dark-border" matRipple>
-                <div class="m-auto">
-                    Hotel Rentals
+                <div (click)="selectItem(item)" *ngIf="i !== (props.optionList || []).length -1 && i !== 0"
+                     class="{{selected?.value === item.value ? 'bg-primary border-primary' : 'border-light-border dark:border-dark-border'}} w-40 flex justify-center border-l border-t border-b border-solid"
+                     matRipple>
+                    <div class="m-auto flex justify-between gap-2">
+                        <mat-icon class="mat-18">{{item.icon}}</mat-icon>
+                        <div class="flex">
+                            <div class="m-auto">{{item.label}}</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="w-32 flex justify-center border-l bg-primary border-r border-t border-b border-primary border-solid rounded-r" matRipple>
-                <div class="m-auto">
-                    Hotel Rentals
+                <div (click)="selectItem(item)" *ngIf="i === (props.optionList || []).length -1"
+                     class="{{selected?.value === item.value ? 'bg-primary border-primary' : 'border-light-border dark:border-dark-border'}} w-40 flex justify-center border-l border-r border-t border-b border-solid rounded-r"
+                     matRipple>
+                    <div class="m-auto flex justify-between gap-2">
+                        <mat-icon class="mat-18">{{item.icon}}</mat-icon>
+                        <div class="flex">
+                            <div class="m-auto">{{item.label}}</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </ng-container>
         </div>
     `,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class HorizontalTabSelect extends FieldType<FieldTypeConfig<SelectProps>> implements OnInit {
-    selected = null;
-    totalCheckedCount = 0
-    summaryLabel = '';
-    selectedSet = new Map()
+export class HorizontalTabSelectComponent extends FieldType<FieldTypeConfig<SelectProps>> {
+    selected: any = null;
 
-    clickOption(option: any) {
-        this.selectedSet.set(option.value, !this.selectedSet.get(option.value));
-        this.formControl.setValue(this.selected);
-        this.updateLabel()
-    }
-
-    ngOnInit() {
-        const initValue = this.formControl.value;
-        if (initValue && initValue.length > 0) {
-            initValue.map((value: any) => {
-                this.selectedSet.set(value, true);
-            })
-        }
-        this.updateLabel();
-    }
-
-    updateLabel() {
-        const checkedOptions = Array.from(this.selectedSet, ([option, selected]) => ({
-            option,
-            selected
-        })).filter((item) => !!item.selected)
-        this.totalCheckedCount = checkedOptions.length;
-        if (this.totalCheckedCount === 1) {
-            this.summaryLabel = checkedOptions[0].option;
-        } else if (this.totalCheckedCount > 1 && this.totalCheckedCount < this.props?.optionList.length) {
-            this.summaryLabel = (checkedOptions[0].option + ' ' + '+ ' + (this.totalCheckedCount - 1));
-        } else if (this.totalCheckedCount > 1 && this.totalCheckedCount === this.props?.optionList.length) {
-            this.summaryLabel = ('All ' + this.props.label);
-        }
-    }
-
-    onResetClicked($event: MouseEvent) {
-        $event.stopPropagation();
-        this.formControl.setValue([]);
-        this.selectedSet.clear();
-        this.updateLabel();
+    selectItem(item: any) {
+        this.selected = item
+        this.formControl.setValue(this.selected)
     }
 }

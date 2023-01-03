@@ -55,6 +55,15 @@ export class HotelSearchFormComponent implements OnInit {
                     props: {
                         appearance: 'outline',
                         placeholder: 'Date To',
+                        optionList: [{
+                            icon: 'hotel',
+                            label: 'hotel',
+                            value: 'Hotel'
+                        }, {
+                            icon: 'holiday_village',
+                            label: 'Hotel Rentals',
+                            value: 'Hotel Rentals'
+                        }]
                     },
                 },
             ]

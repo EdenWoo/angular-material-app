@@ -13,12 +13,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
-import {HorizontalTabSelect} from './horizontal-tab-select.type';
+import {HorizontalTabSelectComponent} from './horizontal-tab-select.type';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
-    declarations: [HorizontalTabSelect],
+    declarations: [HorizontalTabSelectComponent],
     imports: [
         CommonModule,
         ReactiveFormsModule,
@@ -31,7 +31,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
             types: [
                 {
                     name: 'ama-horizontal-tab-select',
-                    component: HorizontalTabSelect,
+                    component: HorizontalTabSelectComponent,
                 },
             ],
         }),
