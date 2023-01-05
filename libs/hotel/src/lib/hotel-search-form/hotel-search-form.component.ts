@@ -26,7 +26,7 @@ export class HotelSearchFormComponent implements OnInit {
                         appearance: 'outline',
                         addonLeft: {
                             icon: 'search',
-                            className: 'mx-2 text-blue-500'
+                            className: 'mx-2 text-primary'
                         },
                     },
                 },
