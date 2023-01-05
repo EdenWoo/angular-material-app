@@ -1,29 +1,126 @@
 <div class="mx-12 mt-4 flex border border-solid border-light-border dark:border-dark-border rounded"
      *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
-    <div class="w-80">
+    <div class="w-[350px]">
         <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60"
              alt="">
     </div>
-    <div class="flex-grow p-6">
-        <div class="flex">
-            <div class="font-semibold text-xl flex-grow">New York Resort & Spa</div>
-            <div class="font-semibold text-xl">$500</div>
-        </div>
+    <div class="flex-grow flex flex-col p-6">
+        <div class="flex-grow">
+            <div class="flex">
+                <div class="font-semibold text-xl flex-grow">New York Resort & Spa</div>
+                <div class="font-semibold text-xl">$500</div>
+            </div>
+            <div class="grid grid-cols-6 mt-4 text-light-border dark:text-dark-border">
+                <div class="flex gap-2">
+                    <div class="flex">
+                        <mat-icon class="m-auto text-base">hotel</mat-icon>
+                    </div>
+                    <div class="flex">
+                        <div class="m-auto">
+                            4-star hotel
+                        </div>
+                    </div>
 
-        <div class="grid grid-cols-3 mt-4 text-light-border dark:text-dark-border">
-            <div>4-star hotel</div>
-            <div>4-star hotel</div>
-            <div>4-star hotel</div>
-            <div>4-star hotel</div>
-            <div>4-star hotel</div>
-            <div>4-star hotel</div>
-            <div>4-star hotel</div>
-            <div>4-star hotel</div>
-            <div>4-star hotel</div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex">
+                        <mat-icon class="m-auto text-base">wifi</mat-icon>
+                    </div>
+                    <div class="flex">
+                        <div class="m-auto">
+                            Free Wifi
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex">
+                        <mat-icon class="m-auto text-base">ac_unit</mat-icon>
+                    </div>
+                    <div class="flex">
+                        <div class="m-auto">
+                            Air conditioning
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="flex gap-2">
+                    <div class="flex">
+                        <mat-icon class="m-auto text-base">accessible</mat-icon>
+                    </div>
+                    <div class="flex">
+                        <div class="m-auto">
+                            Accessible
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex">
+                        <mat-icon class="m-auto text-base">kitchen</mat-icon>
+                    </div>
+                    <div class="flex">
+                        <div class="m-auto">
+                            Kitchen
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex">
+                        <mat-icon class="m-auto text-base">bar</mat-icon>
+                    </div>
+                    <div class="flex">
+                        <div class="m-auto">
+                            Bar
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="flex gap-2">
+                    <div class="flex">
+                        <mat-icon class="m-auto text-base">bar</mat-icon>
+                    </div>
+                    <div class="flex">
+                        <div class="m-auto">
+                            Bar
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex">
+                        <mat-icon class="m-auto text-base">restaurant</mat-icon>
+                    </div>
+                    <div class="flex">
+                        <div class="m-auto">
+                            Restaurant
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex">
+                        <mat-icon class="m-auto text-base">local_spa</mat-icon>
+                    </div>
+                    <div class="flex">
+                        <div class="m-auto">
+                            Spa
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
-        <div class="flex mt-4">
+        <div class="flex">
             <div class="flex-grow"></div>
-            <button mat-raised-button color="primary" class="">View Price</button>
+            <button mat-raised-button color="primary">
+                <span class="dark:text-white">
+                    View Price
+                </span>
+            </button>
         </div>
     </div>
 </div>

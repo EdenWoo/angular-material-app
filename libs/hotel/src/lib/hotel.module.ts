@@ -8,6 +8,7 @@ import {HotelRoutingModule} from './hotel-routing.module';
 import {HotelSearchFormComponent} from './hotel-search-form/hotel-search-form.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
         FormlyMaterialModule,
         FormlyModule,
         HotelRoutingModule,
-        MatButtonModule
+        MatButtonModule,
+        MatIconModule
     ]
 })
 export class HotelModule {
