@@ -9,6 +9,7 @@ import {DropdownOptionSelectModule} from './dropdown-option-select';
 import {FormlyMatDatepickerModule} from '@ngx-formly/material/datepicker';
 import {DateAdapter, MAT_DATE_FORMATS, NativeDateAdapter} from '@angular/material/core';
 import {HorizontalTabSelectModule} from './horizontal-tab-select';
+import {AutocompleteInputModule} from './autocomplete-input';
 
 export const DATE_FORMATS = {
     parse: {
@@ -34,7 +35,8 @@ export const DATE_FORMATS = {
         MatIconModule,
         DropdownOptionSelectModule,
         FormlyMatDatepickerModule,
-        HorizontalTabSelectModule
+        HorizontalTabSelectModule,
+        AutocompleteInputModule
     ],
     providers: [
         {provide: DateAdapter, useClass: NativeDateAdapter},

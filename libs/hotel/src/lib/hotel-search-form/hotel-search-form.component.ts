@@ -18,7 +18,7 @@ export class HotelSearchFormComponent implements OnInit {
             fieldGroup: [
                 {
                     key: 'keyword',
-                    type: 'input',
+                    type: 'ama-autocomplete-input',
                     className: 'col-span-4',
                     props: {
                         // label: 'Search places, hotel or more',
@@ -28,6 +28,56 @@ export class HotelSearchFormComponent implements OnInit {
                             icon: 'search',
                             className: 'mx-2 text-primary'
                         },
+                        optionList: [
+                            {
+                                icon: 'hotel',
+                                label: 'springlands lifestyle village',
+                                value: 'springlands lifestyle village',
+                            },
+                            {
+                                icon: 'hotel',
+                                label: 'spring creek motel',
+                                value: 'spring creek motel',
+                            },
+                            {
+                                icon: 'hotel',
+                                label: 'Ritz-Carlton Hotel',
+                                value: 'Ritz-Carlton Hotel',
+                            },
+                            {
+                                icon: 'hotel',
+                                label: 'Marriott',
+                                value: 'Marriott',
+                            },
+                            {
+                                icon: 'hotel',
+                                label: 'The Luxury Collection Hotels & Resorts',
+                                value: 'The Luxury Collection Hotels & Resorts',
+                            },
+                            {
+                                icon: 'hotel',
+                                label: 'Hyatt',
+                                value: 'Hyatt',
+                            }, {
+                                icon: 'hotel',
+                                label: 'Rosewood Hotels & Resorts',
+                                value: 'Rosewood Hotels & Resorts',
+                            }, {
+                                icon: 'hotel',
+                                label: 'Four Seasons',
+                                value: 'Four Seasons',
+                            },
+                            {
+                                icon: 'hotel',
+                                label: 'St Regis Hotels',
+                                value: 'St Regis Hotels',
+                            },
+                            {
+                                icon: 'hotel',
+                                label: 'Aman Resorts',
+                                value: 'Aman Resorts',
+                            },
+                        ]
                     },
                 },
                 {
