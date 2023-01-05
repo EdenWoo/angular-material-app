@@ -4,7 +4,7 @@
 1. Onboarding form
 <img width="1904" alt="image" src="https://user-images.githubusercontent.com/17792496/209464001-189524ce-bc99-49bf-b760-b2aadf28c26e.png">
 2. Hotel app
-<img width="1904" alt="image" src="https://user-images.githubusercontent.com/17792496/210341654-84cf1f60-c877-4d06-ac74-fde41950263a.png">
+![image](https://user-images.githubusercontent.com/17792496/210681046-454e0fce-c385-409a-b34a-d2c3b213d9fb.png)
 
 ## Development server
 
