@@ -1,0 +1,14 @@
+.sidenav {
+  &__link {
+    &:hover {
+      color: var(--app-theme-primary);
+    }
+
+    &.active {
+      color: var(--app-theme-primary);
+      border: solid 1px var(--app-theme-primary);
+      border-radius: 9999px;
+    }
+  ;
+  }
+}

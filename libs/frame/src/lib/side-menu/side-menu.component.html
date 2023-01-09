@@ -1,10 +1,10 @@
-<div class="">
+<div class="sidenav">
     <mat-nav-list>
         <ng-container *ngFor="let nav of NAVIGATION_MENUS">
-            <div class="h-16 hover:bg-light-hover-bg dark:hover:bg-dark-hover-bg">
+            <div class="h-16 ml-4 hover:bg-light-hover-bg dark:hover:bg-dark-hover-bg rounded-full">
                 <a
                         *ngIf="!nav.target"
-                        class="flex cursor-pointer pl-6 h-full w-full"
+                        class="sidenav__link flex cursor-pointer pl-6 h-full w-full"
                         [routerLink]="[nav.link]"
                         [routerLinkActive]="['active', 'primary']"
                 >
