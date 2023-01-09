@@ -3,7 +3,7 @@ import {MatSidenav} from '@angular/material/sidenav';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {Router} from '@angular/router';
-import {ResponsiveService, ThemingService} from '@angular-material-app/core';
+import {DARK_THEME, ResponsiveService, ThemingService} from '@angular-material-app/core';
 
 @Component({
     selector: 'ama-frame',
@@ -34,6 +34,8 @@ export class FrameComponent implements OnInit {
 
         this.themingService.theme.subscribe((theme: string) => {
             this.className = theme;
+            console.log(theme)
+            this.isDarkMode = theme === DARK_THEME;
             this.applyThemeOnOverlays();
         });
     }
@@ -42,9 +44,9 @@ export class FrameComponent implements OnInit {
         this.opened = !this.opened;
     }
 
-    toggleTheme(b: boolean) {
-        this.isDarkMode = b;
-        this.className = b ? 'dark-theme' : '';
+    toggleTheme() {
+        this.isDarkMode = !this.isDarkMode;
+        this.className = this.isDarkMode ? 'dark-theme' : '';
         this.applyThemeOnOverlays()
     }
 

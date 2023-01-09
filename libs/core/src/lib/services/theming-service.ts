@@ -1,38 +1,40 @@
-import { ApplicationRef, Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {ApplicationRef, Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 export const THEME_KEY = 'theme-key';
+export const DARK_THEME = 'dark-theme';
+export const LIGHT_THEME = 'light-theme';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class ThemingService {
-  themes = ['dark-theme', 'light-theme'];
-  theme = new BehaviorSubject('light-theme');
+    themes = [DARK_THEME, LIGHT_THEME];
+    theme = new BehaviorSubject(LIGHT_THEME);
 
-  constructor(private ref: ApplicationRef) {
-    // Initially check if dark mode is enabled on system
-    const darkModeOn = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    constructor(private ref: ApplicationRef) {
+        // Initially check if dark mode is enabled on system
+        const darkModeOn = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    const themeValueFromLocalStorage = localStorage.getItem(THEME_KEY);
+        const themeValueFromLocalStorage = localStorage.getItem(THEME_KEY);
 
-    if (themeValueFromLocalStorage === 'dark-theme') {
-      this.theme.next('dark-theme');
-    } else if (themeValueFromLocalStorage === 'light-theme') {
-      this.theme.next('light-theme');
-    } else if (darkModeOn) {
-      // if not theme value store in localstorage use the prefers-color-scheme
-      this.theme.next('dark-theme');
-    } else {
-      // default to light theme
-      this.theme.next('light-theme');
+        if (themeValueFromLocalStorage === DARK_THEME) {
+            this.theme.next(DARK_THEME);
+        } else if (themeValueFromLocalStorage === LIGHT_THEME) {
+            this.theme.next(LIGHT_THEME);
+        } else if (darkModeOn) {
+            // if not theme value store in localstorage use the prefers-color-scheme
+            this.theme.next(DARK_THEME);
+        } else {
+            // default to light theme
+            this.theme.next(LIGHT_THEME);
+        }
+
+        // Watch for changes of the preference
+        window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
+            const turnOn = e.matches;
+            this.theme.next(turnOn ? DARK_THEME : LIGHT_THEME);
+            localStorage.setItem(THEME_KEY, turnOn ? DARK_THEME : LIGHT_THEME);
+            // Trigger refresh of UI
+            this.ref.tick();
+        });
     }
-
-    // Watch for changes of the preference
-    window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
-      const turnOn = e.matches;
-      this.theme.next(turnOn ? 'dark-theme' : 'light-theme');
-      localStorage.setItem(THEME_KEY, turnOn ? 'dark-theme' : 'light-theme');
-      // Trigger refresh of UI
-      this.ref.tick();
-    });
-  }
 }
