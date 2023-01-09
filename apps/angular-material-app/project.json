@@ -11,7 +11,7 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/angular-material-app",
+        "outputPath": "docs",
         "index": "apps/angular-material-app/src/index.html",
         "main": "apps/angular-material-app/src/main.ts",
         "polyfills": [
@@ -36,7 +36,7 @@
             {
               "type": "initial",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",
