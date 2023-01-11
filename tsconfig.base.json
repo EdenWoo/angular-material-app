@@ -33,6 +33,9 @@
       "@angular-material-app/hotel": [
         "libs/hotel/src/index.ts"
       ],
+      "@angular-material-app/job": [
+        "libs/job/src/index.ts"
+      ],
       "@angular-material-app/onboarding": [
         "libs/onboarding/src/index.ts"
       ]
