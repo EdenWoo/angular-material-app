@@ -3,7 +3,9 @@ import {MatSidenav} from '@angular/material/sidenav';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {Router} from '@angular/router';
-import {DARK_THEME, ResponsiveService, ThemingService} from '@angular-material-app/core';
+import {AppFacade, DARK_THEME, ResponsiveService, SidebarStatus, ThemingService} from '@angular-material-app/core';
+import {take} from 'rxjs/operators';
+import {combineLatest} from 'rxjs';
 
 @Component({
     selector: 'ama-frame',
@@ -27,11 +29,27 @@ export class FrameComponent implements OnInit {
         private overlay: OverlayContainer,
         private themingService: ThemingService,
         private _router: Router,
+        public appFacade: AppFacade,
     ) {
     }
 
     ngOnInit() {
 
+        combineLatest([this.appFacade.sidebarStatus$.pipe(take(1)), this.responsiveService.getScreens()]).subscribe(
+            ([sidebarStatus, screenMatch]: any) => {
+                if (screenMatch?.phone) {
+                    this.opened = false;
+                } else if (screenMatch.tablet) {
+                    this.opened = false;
+                } else if (screenMatch.desktopSm) {
+                    this.opened = false;
+                } else {
+                    if (sidebarStatus === SidebarStatus.Open) {
+                        this.opened = true;
+                    }
+                }
+            },
+        );
         this.themingService.theme.subscribe((theme: string) => {
             this.className = theme;
             console.log(theme)
